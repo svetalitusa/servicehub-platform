@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "name": "servicehub-platform",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "src/app/api/**/*.ts": {
+      "maxDuration": 10
+    }
+  },
+  "regions": ["iad1"],
+  "framework": "nextjs"
+}
